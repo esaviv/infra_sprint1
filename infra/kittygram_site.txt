@@ -1,0 +1,5 @@
+IP: 158.160.68.40;
+name_taski: https://sweet-pepper.hopto.org/;
+name_kittygram: https://sweet-kitty.hopto.org/;
+login: sea;
+password: 1234; 

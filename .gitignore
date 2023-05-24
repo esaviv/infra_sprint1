@@ -149,6 +149,8 @@ node_modules/
 
 # production
 /build
+/static_backend
+/backend/static_backend/
 
 # misc
 .DS_Store

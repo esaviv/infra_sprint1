@@ -1,16 +1,19 @@
 import os
-from dotenv import load_dotenv
+from distutils.util import strtobool
 from pathlib import Path
+
+from dotenv import load_dotenv
 
 load_dotenv()
 
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = False
+DEBUG =  bool(strtobool(os.environ.get('DEBUG', False)))
 
-ALLOWED_HOSTS = ['158.160.68.40', '127.0.0.1', 'localhost', 'sweet-kitty.hopto.org']
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split()
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -97,7 +100,7 @@ STATIC_URL = 'static_backend'
 STATIC_ROOT = BASE_DIR / 'static_backend'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / '/var/www/kittygram/media/'
+MEDIA_ROOT = '/var/www/kittygram/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

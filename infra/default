@@ -31,14 +31,14 @@ server {
 
 
     listen 80;
-    server_name sweet-pepper.hopto.org;
+    server_name 158.160.68.40 sweet-pepper.hopto.org;
     return 404; # managed by Certbot
 
 
 }
 
 server {
-    server_name 158.160.68.40 sweet-kitty.hopto.org;
+    server_name sweet-kitty.hopto.org;
 
     location /api/ {
         proxy_pass http://127.0.0.1:8080;
